@@ -30,8 +30,7 @@ const ProfileSchema = new Schema({
     required: true
   },
   bio: {
-    type: String,
-    required: true
+    type: String
   },
   githubusername: {
     type: String
@@ -51,7 +50,7 @@ const ProfileSchema = new Schema({
       },
       from: {
         type: Date,
-        require: true
+        required: true
       },
       to: {
         type: Date
@@ -81,7 +80,7 @@ const ProfileSchema = new Schema({
       },
       from: {
         type: Date,
-        require: true
+        required: true
       },
       to: {
         type: Date
@@ -110,7 +109,7 @@ const ProfileSchema = new Schema({
     },
     instagram: {
       type: String
-    },
+    }
   },
   date: {
     type: Date,
