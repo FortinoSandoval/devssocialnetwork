@@ -1,0 +1,1 @@
+export const TEST_DIPATCH = 'TEST_DISPATCH';
