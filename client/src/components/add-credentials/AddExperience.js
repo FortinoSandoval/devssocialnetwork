@@ -15,7 +15,7 @@ class AddExperience extends Component {
       location: "",
       from: "",
       to: "",
-      current: "",
+      current: false,
       description: "",
       errors: {},
       disabled: false
@@ -147,12 +147,12 @@ class AddExperience extends Component {
 }
 
 AddExperience.propTypes = {
+  addExperience: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  addExperience: PropTypes.func.isRequired,
   profile: state.profile,
   errors: state.errors
 });
