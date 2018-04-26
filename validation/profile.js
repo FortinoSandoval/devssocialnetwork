@@ -1,13 +1,13 @@
 const Validator = require("validator");
-const isEmpty = require ("./is-empty");
+const isEmpty = require("./is-empty");
 
 module.exports = function validateProfileInput(data) {
   let errors = {};
 
-  data.handle = !isEmpty(data.handle) ? data.handle : '';
-  data.status = !isEmpty(data.status) ? data.status : '';
-  data.skills = !isEmpty(data.skills) ? data.skills : '';
-  
+  data.handle = !isEmpty(data.handle) ? data.handle : "";
+  data.status = !isEmpty(data.status) ? data.status : "";
+  data.skills = !isEmpty(data.skills) ? data.skills : "";
+
   if (!Validator.isLength(data.handle, { min: 2, max: 20 })) {
     errors.handle = "Handle needs to be between 2 and 20 characters";
   }
@@ -29,7 +29,7 @@ module.exports = function validateProfileInput(data) {
       errors.website = "Not a valid URL";
     }
   }
-  
+
   if (!isEmpty(data.youtube)) {
     if (!Validator.isURL(data.youtube)) {
       errors.youtube = "Not a valid URL";
@@ -59,7 +59,6 @@ module.exports = function validateProfileInput(data) {
       errors.instagram = "Not a valid URL";
     }
   }
-  
 
   return {
     errors,
